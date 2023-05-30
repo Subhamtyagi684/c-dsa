@@ -73,6 +73,10 @@ void POP(stackPtr stack){
     free(newAddr);
 }
 
+dataList getTop(stackPtr nPtr){
+    return nPtr->stackArray->curPtr;
+}
+
 int main(){
     stackPtr ptr = createStack(5);
     PUSH(10,ptr);
@@ -93,6 +97,9 @@ int main(){
         addr = addr->link;
     }
     printf("End!\n");
+    dataList curPtr = getTop(ptr);
     return 0;
 }
 
+//isEmpty function
+//isFull function
